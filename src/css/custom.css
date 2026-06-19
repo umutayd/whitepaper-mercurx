@@ -1,0 +1,100 @@
+:root {
+  --ifm-color-primary: #5ac4b7;
+  --ifm-color-primary-dark: #3fb9ab;
+  --ifm-color-primary-darker: #36aa9d;
+  --ifm-color-primary-darkest: #278176;
+  --ifm-color-primary-light: #72cdc2;
+  --ifm-color-primary-lighter: #8ad6cd;
+  --ifm-color-primary-lightest: #bbe9e3;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.96);
+  --ifm-background-surface-color: #f7fbfb;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #74d7cb;
+  --ifm-color-primary-dark: #58cec1;
+  --ifm-color-primary-darker: #49c9bb;
+  --ifm-color-primary-darkest: #2dafa2;
+  --ifm-color-primary-light: #90e0d6;
+  --ifm-color-primary-lighter: #9fe4db;
+  --ifm-color-primary-lightest: #cbf2ed;
+  --ifm-navbar-background-color: rgba(11, 17, 23, 0.96);
+  --ifm-background-surface-color: #101820;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.navbar__brand {
+  gap: 0.75rem;
+}
+
+.navbar__logo {
+  margin-right: 0;
+}
+
+.navbar__logo img {
+  display: block;
+  height: 2.3rem;
+  width: auto;
+}
+
+@media (max-width: 996px) {
+  :root {
+    --ifm-navbar-sidebar-width: min(88vw, 24rem);
+  }
+
+  .navbar {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .navbar-sidebar__backdrop {
+    z-index: calc(var(--ifm-z-index-overlay) + 1);
+  }
+
+  .navbar-sidebar {
+    z-index: calc(var(--ifm-z-index-overlay) + 2);
+    background: var(--ifm-navbar-background-color);
+    border-right: 1px solid var(--ifm-toc-border-color);
+  }
+
+  .navbar-sidebar__items,
+  .navbar-sidebar__item {
+    background: var(--ifm-navbar-background-color);
+  }
+
+  .navbar-sidebar__brand {
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--ifm-toc-border-color);
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar-sidebar__brand .navbar__logo img {
+    height: 1.85rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .navbar__toggle {
+    color: var(--ifm-navbar-link-color);
+    border-radius: 999px;
+  }
+
+  .navbar-sidebar__close {
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: var(--ifm-color-emphasis-100);
+  }
+
+  .navbar-sidebar .menu__link,
+  .navbar-sidebar .menu__list-item-collapsible {
+    border-radius: 0.8rem;
+  }
+}
